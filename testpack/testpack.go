@@ -1,4 +1,4 @@
-package testgo
+package testpack
 
 import (
 	"fmt"
