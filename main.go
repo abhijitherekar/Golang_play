@@ -31,4 +31,9 @@ func main() {
 	//    }
 
 	//fmt.Println(combtest.v4comb)
+
+	ch := make(chan string, 2) //buffered channel of size 2
+	ch <- "Hello"
+	ch <- "World!"
+	fmt.Println(<-ch, <-ch)
 }
