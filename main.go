@@ -50,6 +50,7 @@ func main() {
 	_, network1, _ := net.ParseCIDR("2001::4/128")
 	_, network2, _ := net.ParseCIDR("2001::5/128")
 	_, network3, _ := net.ParseCIDR("2001::6/128")
+	_, net4, _ := net.ParseCIDR("192.168.1.1/24")
 	ranger.Insert(cidranger.NewBasicRangerEntry(*network1))
 	ranger.Insert(cidranger.NewBasicRangerEntry(*network2))
 	ranger.Insert(cidranger.NewBasicRangerEntry(*network3))
