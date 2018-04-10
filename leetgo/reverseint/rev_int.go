@@ -1,15 +1,14 @@
 // given the 32-bit signed integer reverse it.
 //example: 123 will be 321
 
-package main
+package reverseint
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 )
 
-func reverse(num int) int {
+func Reverse(num int) int {
 	maxint := 0x7fffffff
 	x := math.Abs(float64(num))
 	result := 0
@@ -26,9 +25,4 @@ func reverse(num int) int {
 		return result - 2*result
 	}
 	return result
-}
-
-func main() {
-	a := -320
-	fmt.Println(reverse(a))
 }
