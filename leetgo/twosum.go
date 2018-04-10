@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	//"sort"
 )
 
 func twoSum(nums []int, target int) []int {
@@ -42,7 +42,15 @@ func twoSum(nums []int, target int) []int {
 	*/
 	//Now use the 3rd technique, if you dont have sort package, use hash table
 	temp := make(map[int]int)
-
+	for _, val := range nums {
+		fmt.Println(val, "temp[val]:", temp[val])
+		if temp[val] == 1 {
+			result = append(result, target-val, val)
+			return result
+		} else {
+			temp[target-val] = 1
+		}
+	}
 	return result
 }
 
