@@ -7,6 +7,9 @@ import (
 )
 
 func ispalindrome(x int) bool {
+	if x < 0 {
+		return false
+	}
 	/* using the reverse int we can do this
 	if x == reverseint.Reverse(x) {
 		return true

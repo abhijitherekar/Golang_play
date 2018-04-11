@@ -42,13 +42,14 @@ func twoSum(nums []int, target int) []int {
 	*/
 	//Now use the 3rd technique, if you dont have sort package, use hash table
 	temp := make(map[int]int)
-	for _, val := range nums {
+	for i, val := range nums {
 		fmt.Println(val, "temp[val]:", temp[val])
-		if temp[val] == 1 {
-			result = append(result, target-val, val)
+		if _, ok := temp[val]; ok {
+			fmt.Println(temp[target-val], i)
+			result = append(result, temp[val], i)
 			return result
 		} else {
-			temp[target-val] = 1
+			temp[target-val] = i
 		}
 	}
 	return result
