@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func findRestaurant(list1 []string, list2 []string) []string {
@@ -37,10 +38,24 @@ func finddup(nums []int) bool {
 	return false
 }
 
+func finddupdiff(nums []int, k int) bool {
+	dupmap := make(map[int]int)
+	for i, num := range nums {
+		if !(dupmap[num] > 0) {
+			dupmap[num] = i + 1
+		} else {
+			if int(math.Abs(float64(dupmap[num]-i-1))) <= k {
+				return true
+			}
+		}
+	}
+	return false
+}
+
 func main() {
 	list1 := []string{"a", "b", "c", "z"}
 	list2 := []string{"z", "a", "e", "i"}
 	list3 := []int{1, 2, 3, 4, 1}
 	fmt.Println(findRestaurant(list1, list2))
-	fmt.Println(finddup(list3))
+	fmt.Println(finddupdiff(list3, 3))
 }
