@@ -17,7 +17,7 @@ func findRestaurant(list1 []string, list2 []string) []string {
 		if restmap[str2] > 0 {
 			currmin = i + (restmap[str2] - 1)
 			if currmin < min {
-				ans = append(ans, str2)
+				ans = []string{str2}
 				min = currmin
 			}
 		}
@@ -25,9 +25,22 @@ func findRestaurant(list1 []string, list2 []string) []string {
 	return ans
 }
 
-func main() {
-	list1 := []string{"a", "b", "c"}
-	list2 := []string{"a", "d", "e", "b"}
+func finddup(nums []int) bool {
+	dupmap := make(map[int]bool)
+	for _, num := range nums {
+		if !dupmap[num] {
+			dupmap[num] = true
+		} else {
+			return true
+		}
+	}
+	return false
+}
 
+func main() {
+	list1 := []string{"a", "b", "c", "z"}
+	list2 := []string{"z", "a", "e", "i"}
+	list3 := []int{1, 2, 3, 4, 1}
 	fmt.Println(findRestaurant(list1, list2))
+	fmt.Println(finddup(list3))
 }
