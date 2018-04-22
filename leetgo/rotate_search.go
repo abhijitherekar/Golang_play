@@ -47,7 +47,7 @@ func search(nums []int, target int) int {
 	low := 0
 	high := len(nums) - 1
 
-	for low < high && low > 0 {
+	for low < high {
 		mid := (low + high) / 2
 		//case 1 mid == target
 		if nums[mid] == target {
@@ -89,9 +89,9 @@ func search(nums []int, target int) int {
 
 func main() {
 	//[4,5,6,7,0,1,2]
-	a := []int{4, 5, 6, 7, 0, 1, 2}
+	a := []int{3, 1, 2}
 	//a := []int{12, 4, 5, 6, 7, 10, 11}
 	//end := len(a)
 	//fmt.Println(findstart(a))
-	fmt.Println(search(a, 0))
+	fmt.Println(search(a, 1))
 }
