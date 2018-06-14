@@ -6,9 +6,9 @@ import (
 )
 
 func longestCommonPrefix(str []string) string {
-
+	//geeksfor, geeks, gee
 	var commonprefix bytes.Buffer
-	prefix := str[0]
+	prefix := str[0] //prefix = geeksfor
 	i, j := 0, 0
 	lenstr := len(str)
 	for j < lenstr-1 {
@@ -37,6 +37,6 @@ func longestCommonPrefix(str []string) string {
 
 func main() {
 
-	str := []string{"geeks", "gee", "geekfor"}
+	str := []string{"a", "b"}
 	fmt.Println(longestCommonPrefix(str))
 }
